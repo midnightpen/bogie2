@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="my_py_pkg" exec="py_pub_node" name="simple_pub" output='screen'/>
+  <node pkg="my_py_pkg" exec="py_sub_node" name="simple_sub" />
+</launch>
