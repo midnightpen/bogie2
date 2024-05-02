@@ -140,8 +140,8 @@ def cal_uart(Obj_uart:Uart):
                         delta_d_right = delta_encode_right_temp * Obj_uart.speed_ratio.value
                         delta_d = 0.5 * (delta_d_left + delta_d_right)
                         delta_theta = (delta_d_right - delta_d_left) / Obj_uart.wheel_distance.value
-                        delta_x = delta_d * math.cos(Obj_uart.oriention.value + delta_theta * 0.5)
-                        delta_y = delta_d * math.sin(Obj_uart.oriention.value + delta_theta * 0.5)
+                        delta_x = delta_d * math.cos(Obj_uart.oriention.value + delta_theta)  #* 0.5
+                        delta_y = delta_d * math.sin(Obj_uart.oriention.value + delta_theta)  #* 0.5
 
                         Obj_uart.position_x.value = Obj_uart.position_x.value + delta_x
                         Obj_uart.position_y.value = Obj_uart.position_y.value + delta_y
